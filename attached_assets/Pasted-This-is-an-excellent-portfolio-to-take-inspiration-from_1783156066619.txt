@@ -1,0 +1,699 @@
+This is an excellent portfolio to take inspiration from. Rather than copying it, the best approach is to create a portfolio with the same premium feel and interaction design, but with your own branding, content, and identity. That will look more professional and avoid copyright issues.
+
+Below is a prompt designed for **Claude Opus 4/Sonnet 4**, **Cursor**, **Lovable**, **Bolt.new**, or **v0.dev**. It instructs the AI to build a production-quality portfolio that is inspired by Wibify's quality while being completely personalized for you.
+
+---
+
+# MASTER PROMPT
+
+```text
+You are an award-winning UI/UX designer, senior Full Stack Engineer, and creative director.
+
+Your task is to build a COMPLETE production-ready portfolio website inspired by the premium experience, animations, spacing, typography, smooth scrolling, transitions, and overall quality of
+
+https://wibify.agency/en
+
+DO NOT COPY THEIR DESIGN.
+
+Instead, create an original premium portfolio with my own identity.
+
+The portfolio should feel like something built by Awwwards, Framer, Linear, Apple, Stripe, Vercel, and Wibify combined.
+
+--------------------------------------------------
+MY INFORMATION
+--------------------------------------------------
+
+Name:
+Fatima Yousaf
+
+Headline:
+
+AI Engineer
+Machine Learning Engineer
+Full Stack Developer
+Flutter App Developer
+
+Tagline:
+
+Building Intelligent Systems that Solve Real Problems.
+
+Alternative tagline:
+
+Designing AI Products.
+Engineering Modern Software.
+Building the Future.
+
+Location
+
+Pakistan
+
+Email
+
+ifatimazai@gmail.com
+
+LinkedIn
+
+(placeholder)
+https://linkedin.com/in/yourprofile
+
+GitHub
+
+https://github.com/yourusername
+
+Resume
+
+There must be a Resume Download button.
+
+Resume should be stored inside
+
+/public/resume.pdf
+
+and downloaded when clicked.
+
+--------------------------------------------------
+TECH STACK
+--------------------------------------------------
+
+Frontend
+
+Next.js 15
+
+React
+
+TypeScript
+
+Tailwind CSS
+
+Framer Motion
+
+GSAP
+
+Lenis Smooth Scroll
+
+Shadcn UI
+
+Lucide Icons
+
+Backend
+
+Node.js
+
+Express
+
+Python
+
+Databases
+
+MongoDB
+
+Firebase
+
+Supabase
+
+Languages
+
+Python
+
+Dart
+
+C
+
+JavaScript
+
+TypeScript
+
+Flutter
+
+Machine Learning
+
+TensorFlow
+
+PyTorch
+
+Scikit Learn
+
+OpenCV
+
+--------------------------------------------------
+STYLE
+--------------------------------------------------
+
+Premium
+
+Luxury
+
+Minimal
+
+Modern
+
+Dark Theme
+
+Black background
+
+White typography
+
+Grey accents
+
+Blue gradient highlights
+
+Lots of whitespace
+
+Glassmorphism
+
+Beautiful cards
+
+Large typography
+
+Smooth animations
+
+Micro interactions
+
+Animated cursor
+
+Mouse follower
+
+Parallax effects
+
+Text reveal
+
+Blur transitions
+
+Scroll progress
+
+Magnetic buttons
+
+Loading animation
+
+Page transitions
+
+Everything should feel premium.
+
+--------------------------------------------------
+WEBSITE STRUCTURE
+--------------------------------------------------
+
+1. Hero
+
+Large headline
+
+Hi,
+I'm Fatima.
+
+Building Intelligent Systems
+through AI,
+Software,
+and Design.
+
+Buttons
+
+View Projects
+
+Download Resume
+
+Contact Me
+
+Background animation
+
+Floating particles
+
+Gradient mesh
+
+Animated glowing circles
+
+Social icons
+
+GitHub
+
+LinkedIn
+
+Email
+
+Everything clickable.
+
+--------------------------------------------------
+ABOUT
+
+Professional image placeholder
+
+Story
+
+Computer Science student passionate about Artificial Intelligence, Machine Learning, Full Stack Development, and Flutter Application Development.
+
+Interested in building intelligent software that creates meaningful impact.
+
+Statistics
+
+Years Learning
+
+Projects
+
+Technologies
+
+GitHub Contributions
+
+Animated counters
+
+--------------------------------------------------
+SKILLS
+
+Beautiful animated cards
+
+AI
+
+Machine Learning
+
+Python
+
+TensorFlow
+
+PyTorch
+
+OpenCV
+
+Scikit Learn
+
+Full Stack
+
+Next.js
+
+React
+
+Node.js
+
+Express
+
+MongoDB
+
+Firebase
+
+Flutter
+
+Flutter
+
+Dart
+
+Firebase
+
+REST APIs
+
+Other
+
+Git
+
+GitHub
+
+Docker
+
+Linux
+
+VS Code
+
+Figma
+
+Hover animations
+
+--------------------------------------------------
+SERVICES
+
+AI Development
+
+Machine Learning Models
+
+Flutter App Development
+
+Full Stack Web Development
+
+REST APIs
+
+Automation
+
+Python Applications
+
+Each card has premium animation.
+
+--------------------------------------------------
+PROJECTS
+
+Create premium project cards.
+
+Each project has
+
+Image
+
+Description
+
+Technology badges
+
+GitHub button
+
+Live Demo button
+
+Case Study button
+
+Hover animations
+
+Example projects
+
+AI Education Platform
+
+Flutter Car Showroom App
+
+AI Chatbot
+
+Portfolio Website
+
+Task Manager
+
+Weather App
+
+Sentiment Analysis
+
+Medical AI
+
+--------------------------------------------------
+EXPERIENCE
+
+Timeline
+
+Education
+
+University
+
+Internships
+
+Freelancing
+
+Hackathons
+
+Achievements
+
+--------------------------------------------------
+CERTIFICATES
+
+Premium cards
+
+Certificates
+
+Machine Learning
+
+Flutter
+
+Python
+
+Google
+
+Meta
+
+Microsoft
+
+--------------------------------------------------
+TESTIMONIALS
+
+Beautiful cards
+
+Sliding animation
+
+--------------------------------------------------
+BLOG
+
+Latest Articles
+
+AI
+
+Flutter
+
+Programming
+
+--------------------------------------------------
+CONTACT
+
+Beautiful contact form
+
+Fields
+
+Name
+
+Email
+
+Message
+
+Send Button
+
+Validation
+
+Email integration
+
+Success animation
+
+Google Map
+
+Clickable email
+
+Clickable LinkedIn
+
+Clickable GitHub
+
+--------------------------------------------------
+FOOTER
+
+Navigation
+
+Resume
+
+GitHub
+
+LinkedIn
+
+Email
+
+Copyright
+
+Back to top button
+
+--------------------------------------------------
+SPECIAL FEATURES
+
+Cursor follower
+
+Magnetic buttons
+
+Smooth scrolling
+
+Dark mode
+
+Responsive
+
+SEO optimized
+
+Lighthouse 100
+
+Accessibility
+
+Performance optimized
+
+Lazy loading
+
+Code splitting
+
+Framer Motion animations
+
+GSAP timeline animations
+
+Intersection Observer animations
+
+Image optimization
+
+Typewriter animation
+
+Gradient borders
+
+Animated background
+
+Noise texture
+
+Custom scrollbar
+
+Animated page loader
+
+Animated section transitions
+
+Floating navigation
+
+Sticky navbar
+
+Scroll spy
+
+Mouse parallax
+
+Keyboard accessibility
+
+ARIA labels
+
+--------------------------------------------------
+FUNCTIONALITY
+
+Resume download
+
+LinkedIn opens in new tab
+
+GitHub opens in new tab
+
+Email opens mail client
+
+Working Contact Form
+
+Form validation
+
+Toast notifications
+
+404 page
+
+Loading page
+
+SEO metadata
+
+Open Graph
+
+Twitter cards
+
+robots.txt
+
+sitemap.xml
+
+manifest.json
+
+favicon
+
+--------------------------------------------------
+FILE STRUCTURE
+
+Generate the ENTIRE Next.js project.
+
+Everything.
+
+app/
+
+components/
+
+hooks/
+
+lib/
+
+public/
+
+styles/
+
+fonts/
+
+assets/
+
+animations/
+
+context/
+
+utils/
+
+types/
+
+--------------------------------------------------
+CODE QUALITY
+
+Use reusable components.
+
+Modern architecture.
+
+Clean folder structure.
+
+TypeScript everywhere.
+
+No code duplication.
+
+Best practices.
+
+Comment complex sections.
+
+--------------------------------------------------
+RESPONSIVENESS
+
+Perfect on
+
+Desktop
+
+Laptop
+
+Tablet
+
+Mobile
+
+Large Screens
+
+--------------------------------------------------
+OUTPUT
+
+Generate
+
+every single file
+
+every component
+
+every animation
+
+every icon
+
+every page
+
+every hook
+
+every configuration
+
+everything needed to run the project immediately after
+
+npm install
+
+npm run dev
+
+No placeholders except project images.
+
+No pseudo code.
+
+No skipped sections.
+
+No TODO comments.
+
+Everything production ready.
+
+The final portfolio should be worthy of an Awwwards nomination and significantly better than a standard developer portfolio.
+```
+
+## Recommended stack
+
+To maximize quality, use:
+
+* **Framework:** Next.js 15 (App Router)
+* **Language:** TypeScript
+* **Styling:** Tailwind CSS
+* **Animations:** Framer Motion + GSAP + Lenis
+* **UI:** shadcn/ui
+* **Icons:** Lucide React
+* **Forms:** React Hook Form + Zod
+* **Email:** EmailJS or Resend
+* **Deployment:** Vercel
+
+## Additional sections that will strengthen your portfolio for AI/ML and software engineering roles
+
+* Featured AI projects with architecture diagrams
+* GitHub activity and contribution graph
+* Technical blog/articles
+* Publications or research (if applicable)
+* Open-source contributions
+* Tech stack visualization
+* Interactive skills matrix
+* Timeline of learning and achievements
+* Certifications section
+* Downloadable résumé
+* Contact form with email integration
+* Light/Dark theme toggle
+* Animated loading screen
+* SEO optimized metadata and structured data
+
+With strong projects and polished content, a portfolio built to this specification will present you well for **AI/ML Engineer**, **Full-Stack Developer**, and **Flutter Developer** opportunities.
