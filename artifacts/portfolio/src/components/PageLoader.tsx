@@ -21,7 +21,7 @@ export function PageLoader() {
       initial={{ opacity: 1 }}
       exit={{ opacity: 0, y: '-100%' }}
       transition={{ duration: 0.85, ease: [0.76, 0, 0.24, 1] }}
-      className="fixed inset-0 z-[200] flex flex-col items-center justify-center bg-[#080808]"
+      className="fixed inset-0 z-[200] flex flex-col items-center justify-center bg-[#080706]"
     >
       {/* Name reveal */}
       <div className="flex overflow-hidden mb-8">
@@ -43,7 +43,7 @@ export function PageLoader() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.75, ease: [0.33, 1, 0.68, 1], delay: name.length * 0.08 }}
           className="inline-block font-sans font-black"
-          style={{ fontSize: 'clamp(3.5rem, 10vw, 6rem)', color: '#C6F135', letterSpacing: '-0.04em' }}
+          style={{ fontSize: 'clamp(3.5rem, 10vw, 6rem)', color: 'var(--signal)', letterSpacing: '-0.04em' }}
         >
           .
         </motion.span>
@@ -53,7 +53,7 @@ export function PageLoader() {
       <div className="w-40 h-[1.5px] bg-white/8 relative overflow-hidden">
         <motion.div
           className="absolute left-0 top-0 bottom-0"
-          style={{ width: `${progress}%`, background: '#C6F135' }}
+          style={{ width: `${progress}%`, background: 'var(--signal)' }}
         />
       </div>
 

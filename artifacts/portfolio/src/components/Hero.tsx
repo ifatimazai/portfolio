@@ -27,7 +27,7 @@ function OrbitalCanvas() {
     const drawAsteroid = (cx: number, cy: number, radius: number, phase: number) => {
       // Atmospheric glow behind sphere
       const glow = ctx.createRadialGradient(cx, cy - radius * 0.2, radius * 0.1, cx, cy, radius * 1.9);
-      glow.addColorStop(0, 'rgba(198,241,53,0.04)');
+      glow.addColorStop(0, 'rgba(201,226,101,0.04)');
       glow.addColorStop(0.4, 'rgba(100,100,120,0.06)');
       glow.addColorStop(1, 'transparent');
       ctx.beginPath();
@@ -95,15 +95,15 @@ function OrbitalCanvas() {
 
       // Back half of ring (behind sphere) — dimmer
       const gradient = ctx.createLinearGradient(-rx, 0, rx, 0);
-      gradient.addColorStop(0,   'rgba(198,241,53,0)');
-      gradient.addColorStop(0.25,'rgba(198,241,53,0.55)');
-      gradient.addColorStop(0.5, 'rgba(198,241,53,0.9)');
-      gradient.addColorStop(0.75,'rgba(198,241,53,0.55)');
-      gradient.addColorStop(1,   'rgba(198,241,53,0)');
+      gradient.addColorStop(0,   'rgba(201,226,101,0)');
+      gradient.addColorStop(0.25,'rgba(201,226,101,0.55)');
+      gradient.addColorStop(0.5, 'rgba(201,226,101,0.9)');
+      gradient.addColorStop(0.75,'rgba(201,226,101,0.55)');
+      gradient.addColorStop(1,   'rgba(201,226,101,0)');
 
       ctx.beginPath();
       ctx.ellipse(0, 0, rx, ry, 0, Math.PI, 0); // top arc (back)
-      ctx.strokeStyle = 'rgba(198,241,53,0.18)';
+      ctx.strokeStyle = 'rgba(201,226,101,0.18)';
       ctx.lineWidth = 1.2;
       ctx.stroke();
 
@@ -116,9 +116,9 @@ function OrbitalCanvas() {
       // Glow on ring
       ctx.beginPath();
       ctx.ellipse(0, 0, rx, ry, 0, 0, Math.PI);
-      ctx.shadowColor = '#C6F135';
+      ctx.shadowColor = 'var(--signal)';
       ctx.shadowBlur  = 12;
-      ctx.strokeStyle = 'rgba(198,241,53,0.3)';
+      ctx.strokeStyle = 'rgba(201,226,101,0.3)';
       ctx.lineWidth = 0.8;
       ctx.stroke();
       ctx.shadowBlur = 0;
@@ -263,9 +263,9 @@ function Typewriter() {
 
   return (
     <div className="flex items-center gap-1 font-mono text-sm tracking-widest uppercase text-[#666]">
-      <span className="text-[#C6F135]">/</span>
+      <span className="text-[var(--signal)]">/</span>
       <span style={{ color: '#999' }}>{text}</span>
-      <span className="inline-block w-[2px] h-4 bg-[#C6F135] animate-pulse ml-0.5" />
+      <span className="inline-block w-[2px] h-4 bg-[var(--signal)] animate-pulse ml-0.5" />
     </div>
   );
 }
@@ -293,7 +293,7 @@ export function Hero() {
       <div
         className="absolute bottom-0 left-0 right-0 h-40 pointer-events-none z-[1]"
         style={{
-          background: 'linear-gradient(to top, #080808 0%, transparent 100%)',
+          background: 'linear-gradient(to top, #080706 0%, transparent 100%)',
         }}
       />
 
@@ -309,7 +309,7 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.15 }}
           className="flex items-center gap-4 mb-10"
         >
-          <div className="w-10 h-[1px] bg-[#C6F135]" />
+          <div className="w-10 h-[1px] bg-[var(--signal)]" />
           <span className="section-label">[01] AI &amp; Software Engineer</span>
         </motion.div>
 
@@ -324,7 +324,7 @@ export function Hero() {
             Building{' '}
             <span
               className="editorial editorial-underline"
-              style={{ color: '#C6F135', fontSize: '1.05em' }}
+              style={{ color: 'var(--signal)', fontSize: '1.05em' }}
             >
               intelligent
             </span>
@@ -333,7 +333,7 @@ export function Hero() {
             <br />
             <span
               className="editorial editorial-underline"
-              style={{ color: '#C6F135', fontSize: '1.05em' }}
+              style={{ color: 'var(--signal)', fontSize: '1.05em' }}
             >
               AI,
             </span>
@@ -342,7 +342,7 @@ export function Hero() {
             <br />
             <span
               className="editorial editorial-underline"
-              style={{ color: '#C6F135', fontSize: '1.05em' }}
+              style={{ color: 'var(--signal)', fontSize: '1.05em' }}
             >
               design.
             </span>
@@ -386,8 +386,8 @@ export function Hero() {
           <button
             ref={viewRef as any}
             onClick={() => scrollTo('projects')}
-            className="group relative inline-flex items-center gap-2 px-7 py-3.5 font-sans font-bold text-sm text-[#080808] bg-[#C6F135] overflow-hidden transition-all duration-300 hover:bg-[#d4f860]"
-            style={{ letterSpacing: '0.02em' }}
+            className="group relative inline-flex items-center gap-2 px-7 py-3.5 font-sans font-bold text-sm bg-[var(--signal)] overflow-hidden transition-all duration-300 hover:brightness-110"
+            style={{ color: 'var(--primary-foreground)', letterSpacing: '0.02em' }}
           >
             View Projects
             <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
@@ -397,7 +397,7 @@ export function Hero() {
             ref={dlRef as any}
             href={`${import.meta.env.BASE_URL}resume.pdf`.replace('//', '/')}
             download="Fatima_Yousaf_Resume.pdf"
-            className="inline-flex items-center gap-2 px-7 py-3.5 font-sans font-bold text-sm text-white border border-[#333] hover:border-[#C6F135] hover:text-[#C6F135] transition-all duration-300"
+            className="inline-flex items-center gap-2 px-7 py-3.5 font-sans font-bold text-sm text-white border border-[#333] hover:border-[var(--signal)] hover:text-[var(--signal)] transition-all duration-300"
             style={{ letterSpacing: '0.02em' }}
           >
             Download Resume
@@ -430,7 +430,7 @@ export function Hero() {
               target={label !== 'Email' ? '_blank' : undefined}
               rel="noopener noreferrer"
               aria-label={label}
-              className="group flex items-center gap-2 text-[#444] hover:text-[#C6F135] transition-colors duration-300"
+              className="group flex items-center gap-2 text-[#444] hover:text-[var(--signal)] transition-colors duration-300"
             >
               <Icon className="w-4 h-4" />
               <span className="font-mono text-xs tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-300">

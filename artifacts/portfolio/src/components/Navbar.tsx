@@ -45,7 +45,7 @@ export function Navbar() {
         animate={{ y: isVisible ? 0 : -100 }}
         transition={{ duration: 0.35, ease: 'easeInOut' }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled ? 'py-4 bg-[#080808]/80 backdrop-blur-xl border-b border-white/5' : 'py-6'
+          isScrolled ? 'py-4 bg-[#080706]/80 backdrop-blur-xl border-b border-white/5' : 'py-6'
         }`}
       >
         <div className="max-w-7xl mx-auto px-8 md:px-16 flex items-center justify-between">
@@ -57,10 +57,10 @@ export function Navbar() {
           >
             {/* W-style icon box like Wibify */}
             <div
-              className="w-8 h-8 flex items-center justify-center border border-[#C6F135]/60"
-              style={{ background: 'rgba(198,241,53,0.06)' }}
+              className="w-8 h-8 flex items-center justify-center border border-[var(--signal)]/60"
+              style={{ background: 'rgba(201,226,101,0.06)' }}
             >
-              <span className="font-black text-xs text-[#C6F135] tracking-tight">FY</span>
+              <span className="font-black text-xs text-[var(--signal)] tracking-tight">FY</span>
             </div>
           </button>
 
@@ -79,7 +79,7 @@ export function Navbar() {
                 {activeId === link.id && (
                   <motion.div
                     layoutId="activeNav"
-                    className="absolute inset-0 bg-[#C6F135] z-[-1]"
+                    className="absolute inset-0 bg-[var(--signal)] z-[-1]"
                     transition={{ type: 'spring', stiffness: 350, damping: 32 }}
                   />
                 )}
@@ -92,11 +92,11 @@ export function Navbar() {
           <button
             ref={btnRef as any}
             onClick={() => scrollTo('contact')}
-            className="hidden md:flex items-center gap-2 px-5 py-2.5 border border-white/15 text-white text-xs font-sans font-bold tracking-wide hover:border-[#C6F135] hover:text-[#C6F135] transition-all duration-300"
+            className="hidden md:flex items-center gap-2 px-5 py-2.5 border border-white/15 text-white text-xs font-sans font-bold tracking-wide hover:border-[var(--signal)] hover:text-[var(--signal)] transition-all duration-300"
             style={{ letterSpacing: '0.05em' }}
           >
             Hire Me
-            <span className="w-1.5 h-1.5 rounded-full bg-[#C6F135] animate-pulse" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[var(--signal)] animate-pulse" />
           </button>
 
           {/* Mobile toggle */}
@@ -118,7 +118,7 @@ export function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -24 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="fixed inset-0 z-[60] bg-[#080808]/98 backdrop-blur-3xl flex flex-col justify-center items-center"
+            className="fixed inset-0 z-[60] bg-[#080706]/98 backdrop-blur-3xl flex flex-col justify-center items-center"
           >
             <button
               aria-label="Close navigation menu"
@@ -134,7 +134,7 @@ export function Navbar() {
                   key={link.id}
                   onClick={() => scrollTo(link.id)}
                   className={`font-sans font-black text-3xl tracking-tight transition-colors ${
-                    activeId === link.id ? 'text-[#C6F135]' : 'text-[#555] hover:text-white'
+                    activeId === link.id ? 'text-[var(--signal)]' : 'text-[#555] hover:text-white'
                   }`}
                 >
                   {link.name}
@@ -142,7 +142,7 @@ export function Navbar() {
               ))}
               <button
                 onClick={() => scrollTo('contact')}
-                className="mt-4 px-8 py-3 bg-[#C6F135] text-[#080808] font-sans font-bold text-sm tracking-wide hover:bg-[#d4f860] transition-colors"
+                className="mt-4 px-8 py-3 bg-[var(--signal)] text-[#080808] font-sans font-bold text-sm tracking-wide hover:bg-[#d4f860] transition-colors"
               >
                 Hire Me →
               </button>

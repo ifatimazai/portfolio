@@ -54,7 +54,7 @@ export function CursorFollower() {
         style={{ x: sx, y: sy, translateX: '-50%', translateY: '-50%' }}
         animate={{ scale: isHovering ? 0 : 1, opacity: isVisible ? 1 : 0 }}
         transition={{ duration: 0.15 }}
-        className="fixed top-0 left-0 w-2 h-2 bg-[#C6F135] rounded-full pointer-events-none z-[999]"
+        className="fixed top-0 left-0 w-2 h-2 bg-[var(--signal)] rounded-full pointer-events-none z-[999]"
       />
 
       {/* Ring — laggy, expands on hover */}
@@ -64,7 +64,7 @@ export function CursorFollower() {
           width:       isHovering ? 52 : 32,
           height:      isHovering ? 52 : 32,
           opacity:     isVisible  ? 1  : 0,
-          borderColor: isHovering ? 'rgba(198,241,53,0.6)' : 'rgba(198,241,53,0.22)',
+          borderColor: isHovering ? 'rgba(201,226,101,0.6)' : 'rgba(201,226,101,0.22)',
         }}
         transition={{ duration: 0.25, ease: 'easeOut' }}
         className="fixed top-0 left-0 rounded-full border pointer-events-none z-[998]"

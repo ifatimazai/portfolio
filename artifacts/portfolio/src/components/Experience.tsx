@@ -37,11 +37,7 @@ export function Experience() {
     offset: ["start center", "end center"]
   });
 
-  const pathLength = useSpring(scrollYProgress, {
-    stiffness: 50,
-    damping: 20
-  });
-
+  const pathLength = useSpring(scrollYProgress, { stiffness: 50, damping: 20 });
   const lineHeight = useTransform(pathLength, [0, 1], ["0%", "100%"]);
 
   return (
@@ -53,10 +49,10 @@ export function Experience() {
 
       <div className="relative max-w-3xl mx-auto" ref={containerRef}>
         {/* Animated Timeline Line */}
-        <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-[2px] bg-white/5 -translate-x-1/2 rounded-full overflow-hidden">
-          <motion.div 
-            className="absolute top-0 left-0 right-0 bg-gradient-accent w-full"
-            style={{ height: lineHeight }}
+        <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-[1px] bg-white/5 -translate-x-1/2 overflow-hidden">
+          <motion.div
+            className="absolute top-0 left-0 right-0 w-full"
+            style={{ height: lineHeight, background: 'var(--signal)' }}
           />
         </div>
 
@@ -74,27 +70,45 @@ export function Experience() {
                   isEven ? "md:flex-row-reverse" : "md:flex-row"
                 }`}
               >
-                {/* Timeline Dot */}
-                <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-[#050508] border-2 border-[#C6F135] -translate-x-1/2 z-10 shadow-[0_0_15px_rgba(59,130,246,0.5)]" />
+                {/* Timeline Dot — lime border, lime glow */}
+                <div
+                  className="absolute left-4 md:left-1/2 w-3 h-3 bg-[#080706] border-2 -translate-x-1/2 z-10"
+                  style={{
+                    borderColor: 'var(--signal)',
+                    boxShadow: '0 0 14px rgba(201,226,101,0.35)'
+                  }}
+                />
 
                 {/* Desktop Empty Space */}
                 <div className="hidden md:block w-[calc(50%-2rem)]" />
 
                 {/* Content Card */}
-                <div className="w-[calc(100%-3rem)] md:w-[calc(50%-2rem)] ml-auto md:ml-0 glass-card p-6 rounded-2xl hover:border-[#C6F135]/30 transition-colors duration-300">
-                  <div className="inline-block px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs font-mono font-medium mb-4 border border-[#C6F135]/20">
+                <div
+                  className="w-[calc(100%-3rem)] md:w-[calc(50%-2rem)] ml-auto md:ml-0 glass-card p-6 transition-colors duration-300"
+                  style={{ borderColor: 'var(--border-shad)' }}
+                  onMouseEnter={e => (e.currentTarget.style.borderColor = 'rgba(201,226,101,0.25)')}
+                  onMouseLeave={e => (e.currentTarget.style.borderColor = 'var(--border-shad)')}
+                >
+                  <div
+                    className="inline-block px-3 py-1 text-xs font-mono font-medium mb-4 border"
+                    style={{
+                      background: 'rgba(201,226,101,0.08)',
+                      color: 'var(--signal)',
+                      borderColor: 'rgba(201,226,101,0.2)'
+                    }}
+                  >
                     {exp.date}
                   </div>
-                  
+
                   <h3 className="text-xl font-serif font-bold text-white mb-1">
                     {exp.title}
                   </h3>
-                  
-                  <div className="text-sm font-medium text-gray-400 mb-4">
+
+                  <div className="text-sm font-medium mb-4" style={{ color: 'var(--text-muted)' }}>
                     {exp.org}
                   </div>
-                  
-                  <p className="text-gray-400 text-sm leading-relaxed">
+
+                  <p className="text-sm leading-relaxed" style={{ color: 'var(--text-muted)' }}>
                     {exp.desc}
                   </p>
                 </div>

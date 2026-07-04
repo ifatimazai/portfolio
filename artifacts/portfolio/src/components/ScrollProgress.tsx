@@ -6,7 +6,7 @@ export function ScrollProgress() {
 
   return (
     <motion.div
-      style={{ scaleX, transformOrigin: '0%', background: '#C6F135' }}
+      style={{ scaleX, transformOrigin: '0%', background: 'var(--signal)' }}
       className="fixed top-0 left-0 right-0 h-[2px] z-[150]"
     />
   );

@@ -55,9 +55,9 @@ export function Services() {
               hidden: { opacity: 0, y: 30 },
               visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: idx * 0.1 } }
             }}
-            className="group relative pt-8 border-t border-white/10 hover:border-[#C6F135]/50 transition-colors duration-500 cursor-default"
+            className="group relative pt-8 border-t border-white/10 hover:border-[var(--signal)]/50 transition-colors duration-500 cursor-default"
           >
-            <div className="absolute top-0 right-0 p-2 transform -translate-y-1/2 bg-[#050508] text-gray-500 group-hover:text-[#C6F135] transition-colors duration-300">
+            <div className="absolute top-0 right-0 p-2 transform -translate-y-1/2 bg-[#050508] text-gray-500 group-hover:text-[var(--signal)] transition-colors duration-300">
               <ArrowUpRight className="w-5 h-5 opacity-0 group-hover:opacity-100 -translate-x-2 translate-y-2 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-300" />
             </div>
             
@@ -65,7 +65,7 @@ export function Services() {
               {srv.num}
             </div>
             
-            <h3 className="text-2xl font-serif font-bold text-white mb-3 group-hover:text-[#C6F135] transition-colors">
+            <h3 className="text-2xl font-serif font-bold text-white mb-3 group-hover:text-[var(--signal)] transition-colors">
               {srv.title}
             </h3>
             

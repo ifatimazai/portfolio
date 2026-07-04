@@ -35,7 +35,7 @@ export function About() {
               to production-ready web apps and seamless cross-platform mobile experiences. My focus is on 
               clean architecture, user-centric design, and scalable AI solutions.
             </p>
-            <p className="text-white border-l-2 border-[#C6F135] pl-4 italic">
+            <p className="text-white border-l-2 border-[var(--signal)] pl-4 italic">
               Currently based in Pakistan, open to remote opportunities worldwide.
             </p>
           </div>
@@ -66,11 +66,11 @@ export function About() {
           }}
         >
           <div className="aspect-square rounded-2xl overflow-hidden relative glass-card p-4 group">
-            <div className="absolute inset-0 bg-gradient-to-br from-[#C6F135]/10 to-[#C6F135]/5 mix-blend-overlay group-hover:opacity-75 transition-opacity duration-500" />
+            <div className="absolute inset-0 bg-gradient-to-br from-[var(--signal)]/10 to-[var(--signal)]/5 mix-blend-overlay group-hover:opacity-75 transition-opacity duration-500" />
             <div className="w-full h-full rounded-xl bg-[#0a0a0f] border border-white/5 relative flex items-center justify-center overflow-hidden">
               {/* Decorative shapes */}
-              <div className="absolute top-0 right-0 w-64 h-64 bg-[#C6F135]/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2" />
-              <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#C6F135]/8 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/2" />
+              <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--signal)]/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2" />
+              <div className="absolute bottom-0 left-0 w-64 h-64 bg-[var(--signal)]/8 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/2" />
               
               <h1 className="text-8xl md:text-9xl font-serif font-black text-white/5 group-hover:text-white/10 transition-colors duration-500 select-none">
                 FY
