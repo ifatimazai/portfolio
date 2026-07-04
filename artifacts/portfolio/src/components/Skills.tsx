@@ -6,22 +6,22 @@ const SKILLS = [
   {
     category: "AI & Machine Learning",
     icon: BrainCircuit,
-    color: "from-blue-500/20 to-cyan-500/20",
+    color: "from-[#C6F135]/10 to-cyan-500/20",
     borderGlow: "group-hover:border-cyan-500/50",
     techs: ["Python", "TensorFlow", "PyTorch", "Scikit-learn", "OpenCV", "NLP"]
   },
   {
     category: "Full Stack Web",
     icon: Code2,
-    color: "from-purple-500/20 to-pink-500/20",
-    borderGlow: "group-hover:border-purple-500/50",
+    color: "from-[#C6F135]/8 to-[#C6F135]/5",
+    borderGlow: "group-hover:border-[#C6F135]/40",
     techs: ["Next.js", "React", "Node.js", "Express", "MongoDB", "Firebase", "Supabase"]
   },
   {
     category: "Flutter & Mobile",
     icon: Smartphone,
-    color: "from-blue-400/20 to-indigo-500/20",
-    borderGlow: "group-hover:border-blue-500/50",
+    color: "from-[#C6F135]/10 to-[#C6F135]/6",
+    borderGlow: "group-hover:border-[#C6F135]/50",
     techs: ["Flutter", "Dart", "Firebase", "REST APIs", "Cross-platform"]
   },
   {
@@ -44,7 +44,7 @@ export function Skills() {
   return (
     <SectionWrapper id="skills">
       <motion.div className="mb-12">
-        <span className="text-sm font-mono text-blue-500 tracking-widest">[03] SKILLS</span>
+        <span className="section-label">[03] SKILLS</span>
         <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mt-4">Technical Arsenal</h2>
       </motion.div>
 

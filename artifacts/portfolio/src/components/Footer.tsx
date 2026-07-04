@@ -100,7 +100,7 @@ export function Footer() {
           
           <button 
             onClick={scrollToTop}
-            className="group flex items-center justify-center w-10 h-10 rounded-full bg-white/5 hover:bg-blue-500/20 border border-white/10 hover:border-blue-500/50 transition-all"
+            className="group flex items-center justify-center w-10 h-10 rounded-full bg-white/5 hover:bg-[#C6F135]/10 border border-white/10 hover:border-[#C6F135]/50 transition-all"
             aria-label="Back to top"
           >
             <ArrowUp className="w-4 h-4 text-gray-400 group-hover:text-blue-400 group-hover:-translate-y-1 transition-all" />

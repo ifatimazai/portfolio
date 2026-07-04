@@ -47,7 +47,7 @@ export function Certificates() {
   return (
     <SectionWrapper id="certificates" className="overflow-hidden">
       <motion.div className="mb-12">
-        <span className="text-sm font-mono text-blue-500 tracking-widest">[07] CERTIFICATES</span>
+        <span className="section-label">[07] CERTIFICATES</span>
         <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mt-4">Continuous Learning</h2>
       </motion.div>
 
@@ -64,7 +64,7 @@ export function Certificates() {
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 className="flex-[0_0_85%] md:flex-[0_0_45%] lg:flex-[0_0_30%] min-w-0"
               >
-                <div className="glass-card h-full rounded-2xl p-6 relative overflow-hidden group hover:border-blue-500/30 transition-colors duration-300">
+                <div className="glass-card h-full rounded-2xl p-6 relative overflow-hidden group hover:border-[#C6F135]/30 transition-colors duration-300">
                   {/* Top Gradient Accent */}
                   <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-accent opacity-50 group-hover:opacity-100 transition-opacity" />
                   

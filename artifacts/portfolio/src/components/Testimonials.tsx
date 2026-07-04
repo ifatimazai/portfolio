@@ -59,7 +59,7 @@ export function Testimonials() {
   return (
     <SectionWrapper id="testimonials">
       <motion.div className="mb-16 text-center">
-        <span className="text-sm font-mono text-blue-500 tracking-widest">[08] TESTIMONIALS</span>
+        <span className="section-label">[08] TESTIMONIALS</span>
         <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mt-4">Client Feedback</h2>
       </motion.div>
 
@@ -69,7 +69,7 @@ export function Testimonials() {
             {TESTIMONIALS.map((testimonial, idx) => (
               <div key={idx} className="flex-[0_0_100%] min-w-0 px-4">
                 <div className="flex flex-col items-center text-center">
-                  <div className="text-6xl text-blue-500/20 font-serif leading-none mb-6">"</div>
+                  <div className="text-6xl text-[#C6F135]/20 font-serif leading-none mb-6">"</div>
                   
                   <p className="text-xl md:text-3xl text-white font-serif font-medium leading-relaxed mb-10">
                     {testimonial.quote}
@@ -96,7 +96,7 @@ export function Testimonials() {
               onClick={() => scrollTo(idx)}
               className={`transition-all duration-300 rounded-full ${
                 selectedIndex === idx 
-                  ? 'w-8 h-2 bg-blue-500' 
+                  ? 'w-8 h-2 bg-[#C6F135]' 
                   : 'w-2 h-2 bg-white/20 hover:bg-white/40'
               }`}
               aria-label={`Go to slide ${idx + 1}`}

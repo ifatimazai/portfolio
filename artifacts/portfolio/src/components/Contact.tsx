@@ -44,7 +44,7 @@ export function Contact() {
   return (
     <SectionWrapper id="contact">
       <motion.div className="mb-12">
-        <span className="text-sm font-mono text-blue-500 tracking-widest">[09] CONTACT</span>
+        <span className="section-label">[09] CONTACT</span>
         <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mt-4">Let's Work Together</h2>
       </motion.div>
 
@@ -65,9 +65,9 @@ export function Contact() {
           <div className="space-y-4">
             <a 
               href="mailto:ifatimazai@gmail.com"
-              className="flex items-center gap-4 p-4 rounded-xl glass-card hover:border-blue-500/30 transition-all group"
+              className="flex items-center gap-4 p-4 rounded-xl glass-card hover:border-[#C6F135]/30 transition-all group"
             >
-              <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-blue-400 group-hover:scale-110 group-hover:bg-blue-500/10 transition-all">
+              <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-[#C6F135] group-hover:scale-110 group-hover:bg-[#C6F135]/8 transition-all">
                 <Mail className="w-5 h-5" />
               </div>
               <div>
@@ -80,9 +80,9 @@ export function Contact() {
               href="https://linkedin.com/in/fatima-yousaf"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-4 p-4 rounded-xl glass-card hover:border-blue-500/30 transition-all group"
+              className="flex items-center gap-4 p-4 rounded-xl glass-card hover:border-[#C6F135]/30 transition-all group"
             >
-              <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-blue-400 group-hover:scale-110 group-hover:bg-blue-500/10 transition-all">
+              <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-[#C6F135] group-hover:scale-110 group-hover:bg-[#C6F135]/8 transition-all">
                 <Linkedin className="w-5 h-5" />
               </div>
               <div>
@@ -95,9 +95,9 @@ export function Contact() {
               href="https://github.com/ifatimazai"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-4 p-4 rounded-xl glass-card hover:border-blue-500/30 transition-all group"
+              className="flex items-center gap-4 p-4 rounded-xl glass-card hover:border-[#C6F135]/30 transition-all group"
             >
-              <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-blue-400 group-hover:scale-110 group-hover:bg-blue-500/10 transition-all">
+              <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-[#C6F135] group-hover:scale-110 group-hover:bg-[#C6F135]/8 transition-all">
                 <Github className="w-5 h-5" />
               </div>
               <div>
@@ -107,7 +107,7 @@ export function Contact() {
             </a>
 
             <div className="flex items-center gap-4 p-4 rounded-xl glass-card group">
-              <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-blue-400">
+              <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-[#C6F135]">
                 <MapPin className="w-5 h-5" />
               </div>
               <div>
@@ -150,7 +150,7 @@ export function Contact() {
                     {...register("name")}
                     type="text"
                     id="name"
-                    className="w-full bg-[#050508] border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all placeholder:text-gray-600"
+                    className="w-full bg-[#050508] border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#C6F135] focus:ring-1 focus:ring-[#C6F135] transition-all placeholder:text-gray-600"
                     placeholder="John Doe"
                   />
                   {errors.name && <p className="text-red-400 text-xs">{errors.name.message}</p>}
@@ -162,7 +162,7 @@ export function Contact() {
                     {...register("email")}
                     type="email"
                     id="email"
-                    className="w-full bg-[#050508] border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all placeholder:text-gray-600"
+                    className="w-full bg-[#050508] border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#C6F135] focus:ring-1 focus:ring-[#C6F135] transition-all placeholder:text-gray-600"
                     placeholder="john@example.com"
                   />
                   {errors.email && <p className="text-red-400 text-xs">{errors.email.message}</p>}
@@ -175,7 +175,7 @@ export function Contact() {
                   {...register("subject")}
                   type="text"
                   id="subject"
-                  className="w-full bg-[#050508] border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all placeholder:text-gray-600"
+                  className="w-full bg-[#050508] border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#C6F135] focus:ring-1 focus:ring-[#C6F135] transition-all placeholder:text-gray-600"
                   placeholder="Project Inquiry"
                 />
                 {errors.subject && <p className="text-red-400 text-xs">{errors.subject.message}</p>}
@@ -187,7 +187,7 @@ export function Contact() {
                   {...register("message")}
                   id="message"
                   rows={4}
-                  className="w-full bg-[#050508] border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all placeholder:text-gray-600 resize-none"
+                  className="w-full bg-[#050508] border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#C6F135] focus:ring-1 focus:ring-[#C6F135] transition-all placeholder:text-gray-600 resize-none"
                   placeholder="Tell me about your project..."
                 />
                 {errors.message && <p className="text-red-400 text-xs">{errors.message.message}</p>}

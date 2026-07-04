@@ -33,7 +33,7 @@ function Portfolio() {
   }, []);
 
   return (
-    <div className="bg-[#050508] min-h-screen text-white font-sans selection:bg-blue-500/30">
+    <div className="bg-[#080808] min-h-screen text-white font-sans selection:bg-[#C6F135]/20">
       <AnimatePresence mode="wait">
         {loading && <PageLoader />}
       </AnimatePresence>

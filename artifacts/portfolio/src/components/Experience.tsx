@@ -47,7 +47,7 @@ export function Experience() {
   return (
     <SectionWrapper id="experience">
       <motion.div className="mb-16 text-center">
-        <span className="text-sm font-mono text-blue-500 tracking-widest">[06] EXPERIENCE</span>
+        <span className="section-label">[06] EXPERIENCE</span>
         <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mt-4">My Journey</h2>
       </motion.div>
 
@@ -75,14 +75,14 @@ export function Experience() {
                 }`}
               >
                 {/* Timeline Dot */}
-                <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-[#050508] border-2 border-blue-500 -translate-x-1/2 z-10 shadow-[0_0_15px_rgba(59,130,246,0.5)]" />
+                <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-[#050508] border-2 border-[#C6F135] -translate-x-1/2 z-10 shadow-[0_0_15px_rgba(59,130,246,0.5)]" />
 
                 {/* Desktop Empty Space */}
                 <div className="hidden md:block w-[calc(50%-2rem)]" />
 
                 {/* Content Card */}
-                <div className="w-[calc(100%-3rem)] md:w-[calc(50%-2rem)] ml-auto md:ml-0 glass-card p-6 rounded-2xl hover:border-blue-500/30 transition-colors duration-300">
-                  <div className="inline-block px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs font-mono font-medium mb-4 border border-blue-500/20">
+                <div className="w-[calc(100%-3rem)] md:w-[calc(50%-2rem)] ml-auto md:ml-0 glass-card p-6 rounded-2xl hover:border-[#C6F135]/30 transition-colors duration-300">
+                  <div className="inline-block px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs font-mono font-medium mb-4 border border-[#C6F135]/20">
                     {exp.date}
                   </div>
                   

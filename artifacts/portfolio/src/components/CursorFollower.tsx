@@ -1,80 +1,73 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
 
 export function CursorFollower() {
-  const [isVisible, setIsVisible] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
+  const [isVisible,  setIsVisible]  = useState(false);
 
-  const cursorX = useMotionValue(-100);
-  const cursorY = useMotionValue(-100);
-  
-  const springConfig = { damping: 25, stiffness: 300, mass: 0.5 };
-  const cursorXSpring = useSpring(cursorX, springConfig);
-  const cursorYSpring = useSpring(cursorY, springConfig);
+  const mx = useMotionValue(-100);
+  const my = useMotionValue(-100);
+
+  const sx = useSpring(mx, { stiffness: 500, damping: 40 });
+  const sy = useSpring(my, { stiffness: 500, damping: 40 });
+  const rx = useSpring(mx, { stiffness: 150, damping: 28 });
+  const ry = useSpring(my, { stiffness: 150, damping: 28 });
 
   useEffect(() => {
-    // Only show on fine pointer devices
-    if (!window.matchMedia('(pointer: fine)').matches) return;
+    const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
+    if (isTouchDevice) return;
 
-    const moveCursor = (e: MouseEvent) => {
+    const onMove = (e: MouseEvent) => {
+      mx.set(e.clientX);
+      my.set(e.clientY);
       if (!isVisible) setIsVisible(true);
-      cursorX.set(e.clientX);
-      cursorY.set(e.clientY);
     };
 
-    const handleMouseOver = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      if (
-        target.tagName.toLowerCase() === 'a' ||
-        target.tagName.toLowerCase() === 'button' ||
-        target.closest('a') ||
-        target.closest('button') ||
-        target.closest('[role="button"]') ||
-        target.closest('input') ||
-        target.closest('textarea')
-      ) {
-        setIsHovering(true);
-      } else {
-        setIsHovering(false);
-      }
-    };
+    const onEnter = () => setIsHovering(true);
+    const onLeave = () => setIsHovering(false);
 
-    window.addEventListener('mousemove', moveCursor);
-    document.addEventListener('mouseover', handleMouseOver);
+    window.addEventListener('mousemove', onMove);
+
+    const attach = () => {
+      document.querySelectorAll('a, button, [role="button"], input, textarea, select').forEach((el) => {
+        el.addEventListener('mouseenter', onEnter);
+        el.addEventListener('mouseleave', onLeave);
+      });
+    };
+    attach();
+
+    const obs = new MutationObserver(attach);
+    obs.observe(document.body, { childList: true, subtree: true });
 
     return () => {
-      window.removeEventListener('mousemove', moveCursor);
-      document.removeEventListener('mouseover', handleMouseOver);
+      window.removeEventListener('mousemove', onMove);
+      obs.disconnect();
     };
-  }, [cursorX, cursorY, isVisible]);
+  }, []);
 
-  if (!isVisible) return null;
+  if (typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches) return null;
 
   return (
     <>
-      {/* Dot */}
+      {/* Dot — snappy */}
       <motion.div
-        className="fixed top-0 left-0 w-2 h-2 bg-white rounded-full pointer-events-none z-[100] mix-blend-difference"
-        style={{
-          x: cursorX,
-          y: cursorY,
-          translateX: '-50%',
-          translateY: '-50%',
-        }}
+        style={{ x: sx, y: sy, translateX: '-50%', translateY: '-50%' }}
+        animate={{ scale: isHovering ? 0 : 1, opacity: isVisible ? 1 : 0 }}
+        transition={{ duration: 0.15 }}
+        className="fixed top-0 left-0 w-2 h-2 bg-[#C6F135] rounded-full pointer-events-none z-[999]"
       />
-      {/* Ring */}
+
+      {/* Ring — laggy, expands on hover */}
       <motion.div
-        className={`fixed top-0 left-0 rounded-full pointer-events-none z-[99] border transition-all duration-300 ${
-          isHovering 
-            ? 'w-16 h-16 border-blue-400 bg-blue-500/10 blur-[2px]' 
-            : 'w-10 h-10 border-white/30 bg-transparent'
-        }`}
-        style={{
-          x: cursorXSpring,
-          y: cursorYSpring,
-          translateX: '-50%',
-          translateY: '-50%',
+        style={{ x: rx, y: ry, translateX: '-50%', translateY: '-50%' }}
+        animate={{
+          width:       isHovering ? 52 : 32,
+          height:      isHovering ? 52 : 32,
+          opacity:     isVisible  ? 1  : 0,
+          borderColor: isHovering ? 'rgba(198,241,53,0.6)' : 'rgba(198,241,53,0.22)',
         }}
+        transition={{ duration: 0.25, ease: 'easeOut' }}
+        className="fixed top-0 left-0 rounded-full border pointer-events-none z-[998]"
       />
     </>
   );

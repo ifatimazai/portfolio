@@ -54,7 +54,7 @@ export function Projects() {
   return (
     <SectionWrapper id="projects">
       <motion.div className="mb-12">
-        <span className="text-sm font-mono text-blue-500 tracking-widest">[05] PROJECTS</span>
+        <span className="section-label">[05] PROJECTS</span>
         <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mt-4">Selected Work</h2>
       </motion.div>
 
@@ -66,7 +66,7 @@ export function Projects() {
               hidden: { opacity: 0, y: 30 },
               visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: idx * 0.1 } }
             }}
-            className="group glass-card rounded-2xl overflow-hidden border border-white/10 hover:border-blue-500/30 transition-all duration-500 hover:-translate-y-2 flex flex-col h-full"
+            className="group glass-card rounded-2xl overflow-hidden border border-white/10 hover:border-[#C6F135]/30 transition-all duration-500 hover:-translate-y-2 flex flex-col h-full"
           >
             {/* Image Placeholder */}
             <div className="aspect-video relative overflow-hidden bg-[#0a0a0f]">
