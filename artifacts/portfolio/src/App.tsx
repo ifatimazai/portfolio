@@ -3,6 +3,7 @@ import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import { Switch, Route, useLocation, Router } from 'wouter';
 
 import { PageLoader } from './components/PageLoader';
 import { CursorFollower } from './components/CursorFollower';
@@ -18,6 +19,7 @@ import { Certificates } from './components/Certificates';
 import { Testimonials } from './components/Testimonials';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
+import { ProjectDetail } from './pages/ProjectDetail';
 
 const queryClient = new QueryClient();
 
@@ -25,7 +27,6 @@ function Portfolio() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Show loader for 2 seconds
     const timer = setTimeout(() => {
       setLoading(false);
     }, 2000);
@@ -41,7 +42,7 @@ function Portfolio() {
       <CursorFollower />
       <ScrollProgress />
       <Navbar />
-      
+
       <main>
         <Hero />
         <About />
@@ -59,11 +60,39 @@ function Portfolio() {
   );
 }
 
+function AppRoutes() {
+  const [location] = useLocation();
+
+  // Extract slug from /projects/:slug
+  const projectMatch = location.match(/^\/projects\/(.+)$/);
+  const slug = projectMatch ? projectMatch[1] : null;
+
+  return (
+    <Switch>
+      <Route path="/projects/:slug">
+        <div
+          className="min-h-screen font-sans"
+          style={{ background: 'var(--background)', color: 'var(--foreground)' }}
+        >
+          <CursorFollower />
+          <ScrollProgress />
+          {slug && <ProjectDetail slug={slug} />}
+        </div>
+      </Route>
+      <Route>
+        <Portfolio />
+      </Route>
+    </Switch>
+  );
+}
+
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <Portfolio />
+        <Router>
+          <AppRoutes />
+        </Router>
         <Toaster />
       </TooltipProvider>
     </QueryClientProvider>

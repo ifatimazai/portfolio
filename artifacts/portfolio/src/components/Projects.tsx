@@ -1,150 +1,133 @@
 import { motion } from 'framer-motion';
+import { useLocation } from 'wouter';
 import { SectionWrapper } from './SectionWrapper';
-import { Github, ExternalLink } from 'lucide-react';
-
-const PROJECTS = [
-  {
-    title: "AI Education Platform",
-    desc: "An intelligent tutoring system that adapts to student learning patterns using Machine Learning.",
-    tags: ["Python", "TensorFlow", "React", "Node.js"],
-    github: "https://github.com/ifatimazai",
-    demo: "https://example.com",
-    // Wibify-style: dark + lime tint
-    gradient: "from-[var(--signal)]/18 via-white/4 to-transparent"
-  },
-  {
-    title: "Flutter Car Showroom",
-    desc: "Premium mobile app for a car dealership with 3D-inspired UI and booking system.",
-    tags: ["Flutter", "Dart", "Firebase"],
-    github: "https://github.com/ifatimazai",
-    gradient: "from-white/8 via-white/3 to-transparent"
-  },
-  {
-    title: "AI Chatbot",
-    desc: "Context-aware conversational AI with memory, multi-turn dialogue, and custom personas.",
-    tags: ["Python", "OpenAI API", "React", "Node.js"],
-    github: "https://github.com/ifatimazai",
-    demo: "https://example.com",
-    gradient: "from-white/10 via-[var(--signal)]/8 to-transparent"
-  },
-  {
-    title: "Sentiment Analysis Tool",
-    desc: "Real-time sentiment analysis engine for social media data with dashboard visualization.",
-    tags: ["Python", "PyTorch", "FastAPI", "React"],
-    github: "https://github.com/ifatimazai",
-    gradient: "from-[var(--signal)]/14 via-white/5 to-transparent"
-  },
-  {
-    title: "Task Manager App",
-    desc: "Full-featured task manager with kanban board, priorities, deadlines, and team collaboration.",
-    tags: ["React", "Node.js", "MongoDB"],
-    github: "https://github.com/ifatimazai",
-    demo: "https://example.com",
-    gradient: "from-white/5 via-[var(--signal)]/10 to-transparent"
-  },
-  {
-    title: "Medical AI System",
-    desc: "AI-assisted diagnostic tool for medical image analysis using deep learning architectures.",
-    tags: ["Python", "TensorFlow", "OpenCV", "Flask"],
-    github: "https://github.com/ifatimazai",
-    gradient: "from-white/7 via-white/3 to-transparent"
-  }
-];
+import { ArrowUpRight } from 'lucide-react';
+import { PROJECTS } from '@/lib/projects';
 
 export function Projects() {
+  const [, navigate] = useLocation();
+
   return (
     <SectionWrapper id="projects">
-      <motion.div className="mb-12">
-        <span className="section-label">[05] PROJECTS</span>
-        <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mt-4">Selected Work</h2>
+      {/* Header */}
+      <motion.div
+        variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.7 } } }}
+        className="mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-6"
+      >
+        <div>
+          <span className="section-label">[05] PROJECTS</span>
+          <h2 className="text-4xl md:text-5xl font-sans font-black text-white mt-4 leading-tight">
+            Selected Work
+          </h2>
+        </div>
+        <p className="text-sm leading-relaxed max-w-xs" style={{ color: 'var(--text-muted)' }}>
+          A curated selection of AI, full‑stack, and mobile projects built with precision and purpose.
+        </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {/* Grid — 2 columns like reference image */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-16">
         {PROJECTS.map((project, idx) => (
-          <motion.div
-            key={idx}
+          <motion.article
+            key={project.slug}
             variants={{
-              hidden: { opacity: 0, y: 30 },
-              visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: idx * 0.1 } }
+              hidden: { opacity: 0, y: 40 },
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: { duration: 0.8, delay: idx * 0.1, ease: [0.16, 1, 0.3, 1] },
+              },
             }}
-            className="group glass-card overflow-hidden border transition-all duration-500 hover:-translate-y-1 flex flex-col h-full"
-            style={{ borderColor: 'var(--border-shad)' }}
-            onMouseEnter={e => (e.currentTarget.style.borderColor = 'rgba(201,226,101,0.25)')}
-            onMouseLeave={e => (e.currentTarget.style.borderColor = 'var(--border-shad)')}
+            className="group cursor-pointer"
+            onClick={() => navigate(`/projects/${project.slug}`)}
           >
-            {/* Image Placeholder */}
-            <div className="aspect-video relative overflow-hidden" style={{ background: '#0a0905' }}>
-              <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} group-hover:scale-105 transition-transform duration-700 ease-out`} />
+            {/* Image block */}
+            <div
+              className="relative overflow-hidden mb-5"
+              style={{
+                aspectRatio: '16 / 10',
+                background: '#0d0c0a',
+              }}
+            >
+              {/* Actual image */}
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                loading="lazy"
+                onError={(e) => {
+                  // Fallback gradient if image hasn't generated yet
+                  const target = e.currentTarget as HTMLImageElement;
+                  target.style.display = 'none';
+                  const parent = target.parentElement!;
+                  parent.style.background =
+                    idx % 2 === 0
+                      ? 'linear-gradient(135deg, rgba(201,226,101,0.15) 0%, rgba(8,7,6,1) 100%)'
+                      : 'linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(8,7,6,1) 100%)';
+                }}
+              />
 
-              {/* Hover Overlay */}
-              <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <span
-                  className="px-5 py-2 border text-white text-sm font-medium transform translate-y-3 group-hover:translate-y-0 transition-transform duration-300"
-                  style={{ borderColor: 'rgba(255,255,255,0.2)' }}
+              {/* Hover overlay */}
+              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex items-center justify-center">
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  className="flex items-center gap-2 px-5 py-2.5 border border-white/30 text-white text-sm font-sans font-medium backdrop-blur-sm"
+                  style={{ background: 'rgba(8,7,6,0.6)' }}
                 >
-                  View Details
-                </span>
+                  View Project <ArrowUpRight className="w-4 h-4" />
+                </motion.div>
               </div>
+
+              {/* Featured badge */}
+              {project.featured && (
+                <div
+                  className="absolute top-4 left-4 text-xs font-mono px-3 py-1"
+                  style={{
+                    background: 'var(--signal)',
+                    color: '#080808',
+                    letterSpacing: '0.08em',
+                  }}
+                >
+                  FEATURED
+                </div>
+              )}
             </div>
 
-            {/* Content */}
-            <div className="p-6 flex flex-col flex-grow">
-              <h3
-                className="text-xl font-serif font-bold text-white mb-2 transition-colors duration-200"
-                style={{ color: '' }}
-                onMouseEnter={e => ((e.currentTarget as HTMLElement).style.color = 'var(--signal)')}
-                onMouseLeave={e => ((e.currentTarget as HTMLElement).style.color = '')}
-              >
-                {project.title}
-              </h3>
-              <p className="text-sm leading-relaxed mb-6 flex-grow line-clamp-2" style={{ color: 'var(--text-muted)' }}>
-                {project.desc}
-              </p>
-
-              {/* Tags */}
-              <div className="flex flex-wrap gap-2 mb-6">
-                {project.tags.map((tag, i) => (
-                  <span
-                    key={i}
-                    className="text-xs font-mono px-2 py-1 border"
-                    style={{
-                      color: 'var(--text-faint)',
-                      background: 'rgba(255,255,255,0.03)',
-                      borderColor: 'var(--border-shad)'
-                    }}
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-
-              {/* Links */}
-              <div className="flex items-center gap-4 pt-4 border-t mt-auto" style={{ borderColor: 'rgba(255,255,255,0.05)' }}>
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm transition-colors duration-200 hover:text-white"
-                  style={{ color: 'var(--text-muted)' }}
+            {/* Title + subtitle row */}
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <h3
+                  className="text-xl font-sans font-black text-white mb-1 transition-colors duration-200 group-hover:text-[var(--signal)]"
                 >
-                  <Github className="w-4 h-4" /> Code
-                </a>
-                {project.demo && (
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-sm transition-colors duration-200 ml-auto hover:text-white"
-                    style={{ color: 'var(--text-muted)' }}
-                  >
-                    <ExternalLink className="w-4 h-4" /> Live Demo
-                  </a>
-                )}
+                  {project.title}
+                </h3>
+                <p className="text-sm font-mono" style={{ color: 'var(--text-faint)' }}>
+                  {project.subtitle}
+                </p>
               </div>
+              <ArrowUpRight
+                className="w-5 h-5 mt-1 shrink-0 opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                style={{ color: 'var(--signal)' }}
+              />
             </div>
-          </motion.div>
+          </motion.article>
         ))}
       </div>
+
+      {/* Footer line */}
+      <motion.div
+        variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { delay: 0.6 } } }}
+        className="mt-20 pt-8 border-t flex items-center justify-between"
+        style={{ borderColor: 'rgba(255,255,255,0.06)' }}
+      >
+        <span className="text-xs font-mono" style={{ color: 'var(--text-faint)' }}>
+          {PROJECTS.length} projects total
+        </span>
+        <span className="text-xs font-mono" style={{ color: 'var(--text-faint)' }}>
+          Click any project to view details →
+        </span>
+      </motion.div>
     </SectionWrapper>
   );
 }
