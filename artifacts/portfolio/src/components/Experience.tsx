@@ -6,7 +6,7 @@ const EXPERIENCES = [
   {
     title: "BS Computer Science",
     org: "University",
-    date: "2022 – Present",
+    date: "2023 – Present",
     desc: "Pursuing CS degree with focus on Artificial Intelligence, Machine Learning, and software engineering principles. Maintaining a high GPA while actively participating in tech societies."
   },
   {
@@ -20,12 +20,6 @@ const EXPERIENCES = [
     org: "Remote",
     date: "2023 – Present",
     desc: "Delivering end-to-end full-stack web applications, Flutter mobile apps, and custom AI solutions for international clients. Handling requirements, design, and deployment."
-  },
-  {
-    title: "Hackathon Competitor",
-    org: "Various Events",
-    date: "2022 – Present",
-    desc: "Actively participating in national-level hackathons. Collaborating with teams to build innovative, AI-powered solutions under extreme time pressure."
   }
 ];
 

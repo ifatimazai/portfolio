@@ -64,26 +64,35 @@ export function Navbar() {
             </div>
           </button>
 
-          {/* Desktop nav pill */}
-          <div className="hidden md:flex items-center gap-1 bg-white/[0.03] backdrop-blur-xl border border-white/[0.07] px-3 py-1.5">
+          {/* Desktop nav links — no filled box, just a slim underline dot */}
+          <div className="hidden md:flex items-center gap-1 px-3 py-1.5">
             {NAV_LINKS.map((link) => (
               <button
                 key={link.id}
                 onClick={() => scrollTo(link.id)}
-                className={`px-4 py-1.5 text-xs font-sans font-medium tracking-wide transition-all duration-250 relative ${
-                  activeId === link.id
-                    ? 'text-[#080808]'
-                    : 'text-[#666] hover:text-white'
-                }`}
+                className="relative px-4 py-1.5 text-xs font-sans font-medium tracking-wide transition-colors duration-200"
+                style={{
+                  color: activeId === link.id ? 'var(--signal)' : '#666',
+                }}
+                onMouseEnter={e => {
+                  if (activeId !== link.id)
+                    (e.currentTarget as HTMLElement).style.color = '#fff';
+                }}
+                onMouseLeave={e => {
+                  (e.currentTarget as HTMLElement).style.color =
+                    activeId === link.id ? 'var(--signal)' : '#666';
+                }}
               >
+                {link.name}
+                {/* Small dot indicator — sits below the text only */}
                 {activeId === link.id && (
-                  <motion.div
-                    layoutId="activeNav"
-                    className="absolute inset-0 bg-[var(--signal)] z-[-1]"
-                    transition={{ type: 'spring', stiffness: 350, damping: 32 }}
+                  <motion.span
+                    layoutId="activeNavDot"
+                    className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1"
+                    style={{ background: 'var(--signal)' }}
+                    transition={{ type: 'spring', stiffness: 400, damping: 35 }}
                   />
                 )}
-                {link.name}
               </button>
             ))}
           </div>
